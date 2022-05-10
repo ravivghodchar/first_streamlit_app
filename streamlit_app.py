@@ -1,4 +1,9 @@
 import streamlit
+import pandas
+import requests
+import snowflake.connector
+from urllib import URLError
+
 streamlit.title('My Mom\'s New Healthy Diner')
 streamlit.header('Breakfast Favorites')
 streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
@@ -6,7 +11,7 @@ streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞 Avocado Toast')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
-import pandas
+
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list=my_fruit_list.set_index('Fruit')
 
@@ -46,7 +51,7 @@ streamlit.dataframe(my_data_rows)
 add_my_fruit = streamlit.text_input('What fruit would you like to add?', 'kiwi')
 streamlit.write('Thanks for entering ',add_my_fruit)
 
-import requests
+
 fruityvice_response=requests.put("https://fruityvice.com/api/fruit/" + add_my_fruit)
 
 #This will not work correctly but just go with it
