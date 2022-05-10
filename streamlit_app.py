@@ -27,7 +27,7 @@ def get_fruityvice_data(this_fruit_choice):
   return fruityvice_normalized
 
 #New Section to Display fruityvice api response
-streamlit.header('View Our Frit List-AddYour Favourites')
+streamlit.header('View Our Fruit List-AddYour Favourites')
 try:
  fruit_choice = streamlit.text_input('What fruit would you like information about?')
  if not fruit_choice:
