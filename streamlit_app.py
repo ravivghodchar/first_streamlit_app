@@ -60,4 +60,4 @@ streamlit.write('Thanks for entering ',add_my_fruit)
 fruityvice_response=requests.put("https://fruityvice.com/api/fruit/" + add_my_fruit)
 
 #This will not work correctly but just go with it
-my_cur.execute("insert into fruit_load_list values ('from streamlit') ")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit') ")
